@@ -1,0 +1,28 @@
+Bank API
+
+resource            url                 method      parameters      status codes
+--------------------------------------------------------------------------------------------------------------------------
+Register            /register           /post       username        200 OK
+                                                    password        301/302 Invalid username/password
+
+Add                 /deposit            /post       username        200 OK
+(Insert money)                                      password        301/302 Invalid username/password
+                                                    amount          304 Invalid amount (like -5)
+
+Transfer            /transfer           /post       username        200 OK
+                                                    password        301/302 Invalid username/password
+                                                    to_accout       303 Insufficient balance
+                                                    amount          304 Invalid amount (like -5)
+
+CheckBalance        /checkbalance       /post       username        200 OK
+                                                    password        301/302 Invalid username/password
+
+TakeLoan            /takeloan           /post       username        200 OK
+                                                    password        301/302 Invalid username/password
+                                                    amount          304 Invalid amount (like -5)
+
+PayLoan             /payloan            /post       username        200 OK
+                                                    password        301/302 Invalid username/password
+                                                                    303 Insufficient balance
+
+
